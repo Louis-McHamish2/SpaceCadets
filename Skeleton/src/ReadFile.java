@@ -13,12 +13,23 @@ public class ReadFile {
             List<String> fileList = new ArrayList<String>();
 
             // set ; to be the delimiter
-            myScanner.useDelimiter(";");
+            myScanner.useDelimiter(";|\\n");
 
             // while there are lines in the scanner
             while (myScanner.hasNext()) {
-                // add them to the list
-                fileList.add(myScanner.next());
+
+                String nextLine = myScanner.next();
+
+                // remove new lines + tabs from Line
+                nextLine = nextLine.replaceAll("\\r|\\n|\t", "");
+                // remove whitespace from start and end of Line
+                nextLine = nextLine.trim();
+
+
+                if (!nextLine.equals("") && !nextLine.startsWith("//")) {
+                    // add them to the list
+                    fileList.add(nextLine);
+                }
             }
             // return the list of lines from the file
             return fileList;

@@ -1,0 +1,30 @@
+// This is a comment
+clear X;
+
+// Add any number
+incr X, 2;
+
+// Divide
+div X, 2;
+
+// Multiply
+mul X, 2;
+
+// if and else statements
+if X is 2 do;
+    incr X, 5;
+    if X is 7 do;
+        while X not 3 do;
+            decr X, 1 ;
+        end while;
+    else;
+        decr X, 1;
+    end if;
+else;
+    if X is 1 do;
+        decr X, 1;
+    end if;
+    incr X, 2
+end if;
+
+incr X, 1;

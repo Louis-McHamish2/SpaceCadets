@@ -22,6 +22,11 @@ public class VarObject {
         checkValue();
     }
 
+    public void mulValue(float value) throws Exception {
+        this.value *= value;
+        checkValue();
+    }
+
     private void checkValue() throws Exception {
         if (this.value < 0){
             throw new Exception(this.name + " cannot have a negative value");
